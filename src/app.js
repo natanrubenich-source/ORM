@@ -2,9 +2,11 @@ import 'dotenv/config';
 import express from 'express';
 import sequelize from './database/db.js';
 
+// Importar model para garantir regristro no squelize;
+import './model/user.model.js';
+
 const app = express();
 app.use(express.json());
-
 
 sequelize.sync({ alter: true }).then( 
     ()=>{
