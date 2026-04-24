@@ -33,3 +33,17 @@ export async function createUser(req, res) {
         res.status(500).json(error);
     }
 }
+
+export async function getUserById(req, res) {
+    //Puxando todos os dados da tabela
+    try {
+        const userId = await User.findByPk(req.params.id);
+        if (!userId){
+            res.status(404).json({erro: "Usuario nao encontrado!"});
+        }
+        console.log(userId);
+        res.status(201).json(userId);
+    } catch (error) {
+        res.status(500).json(error);
+    } 
+}

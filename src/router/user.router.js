@@ -4,7 +4,8 @@ import * as controller from '../controller/user.controller.js'
 const routerUser = Router();
 
 // Criar as rotas
-routerUser.get('/', controller.getAllUsers);
-routerUser.post('/criar', controller.createUser);
+routerUser.get('/', controller.getAllUsers); // READ all
+routerUser.get('/:id', controller.getUserById); // READ id
+routerUser.post('/criar', controller.createUser); // CREATE
 
 export default routerUser;
