@@ -5,5 +5,6 @@ const routerUser = Router();
 
 // Criar as rotas
 routerUser.get('/', controller.getAllUsers);
+routerUser.post('/criar', controller.createUser);
 
 export default routerUser;
